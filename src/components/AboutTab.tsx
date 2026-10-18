@@ -112,7 +112,7 @@ export default function AboutTab() {
             <i className="fas fa-briefcase"></i>
           </div>
           <div className="stat-info">
-            <h3>4+</h3>
+            <h3>6+</h3>
             <p>Production Systems</p>
           </div>
         </div>

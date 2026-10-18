@@ -55,7 +55,7 @@ export const RESUME_DATA = {
 
   stats: [
     { label: "Years Experience", value: "3.5+" },
-    { label: "Production Backend Systems", value: "4+" },
+    { label: "Production Backend Systems", value: "6+" },
     { label: "Third-Party Integrations", value: "15+" },
     { label: "Async Queue & Webhooks", value: "99.9%" },
   ],

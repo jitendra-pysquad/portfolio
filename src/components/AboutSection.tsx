@@ -165,7 +165,7 @@ export default function AboutSection() {
 
             <div className="bg-white border border-sky-100 p-8 rounded-2xl flex flex-col items-center justify-center text-center shadow-lg shadow-sky-100/50 hover:border-sky-300 transition-all hover:-translate-y-1 group">
               <h3 className="text-5xl md:text-6xl font-extrabold text-gradient mb-2 drop-shadow-xs">
-                4+
+                6+
               </h3>
               <p className="text-base text-slate-600 font-medium group-hover:text-slate-900 transition-colors">
                 Production Backend Systems
