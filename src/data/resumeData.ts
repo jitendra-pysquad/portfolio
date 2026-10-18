@@ -48,7 +48,7 @@ export const RESUME_DATA = {
     email: "jitendrachaudhary9971@gmail.com",
     linkedin: "https://linkedin.com/in/jitendrachaudharych",
     linkedinHandle: "linkedin.com/in/jitendrachaudharych",
-    github: "https://github.com",
+    github: "https://github.com/jitendra-pysquad/",
     status: "Available for Senior Backend & AI Engineering Roles",
     bio: "Python Backend Developer with 3.5+ years of experience building scalable REST APIs and backend services using Python, Django, Django REST Framework, FastAPI, PostgreSQL, Redis, and Celery. Experienced in JWT authentication, role-based access control, asynchronous task processing, Razorpay payment and subscription workflows, webhooks, third-party API integrations, Swagger API documentation, and testing with pytest. Experienced in deploying applications on AWS EC2 with Gunicorn, Nginx, and Docker, and actively upskilling in RAG-based AI services with Azure OpenAI and ChromaDB.",
   },

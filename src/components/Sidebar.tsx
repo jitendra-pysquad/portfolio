@@ -127,7 +127,7 @@ export default function Sidebar({ theme, onToggleTheme }: SidebarProps) {
           <i className="fab fa-linkedin-in"></i>
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/jitendra-pysquad/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-link"

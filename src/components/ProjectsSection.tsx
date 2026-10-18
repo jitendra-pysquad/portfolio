@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { asset } from "@/lib/basePath";
 
 interface ProjectItem {
@@ -18,8 +18,6 @@ interface ProjectItem {
 }
 
 export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-
   const projects: ProjectItem[] = [
     {
       id: "niva",
@@ -53,7 +51,7 @@ export default function ProjectsSection() {
         "Implemented automated subscription management, payment signature verification, and idempotency-guaranteed webhook processors using Redis and Celery.",
         "Constructed an omnichannel integration layer connecting WhatsApp, Instagram, Slack, Telegram, Discord, Microsoft Teams, and LINE, combined with bidirectional CRM sync into HubSpot, Salesforce, Odoo, and Zendesk.",
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/jitendra-pysquad/",
       liveUrl: "https://getniva.ai/",
     },
     {
@@ -89,7 +87,7 @@ export default function ProjectsSection() {
         "Automated background processing with Celery and Redis for automated claim submissions, insurer email synchronization, and periodic payment settlement reconciliation.",
         "Enforced robust testing with pytest and Django TestCase alongside comprehensive Swagger / OpenAPI live documentation.",
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/jitendra-pysquad/",
       liveUrl: "https://hospital.carenavindia.ai/login?reson=inactive",
     },
     {
@@ -124,7 +122,7 @@ export default function ProjectsSection() {
         "Designed and scheduled daily engagement email summaries dispatched automatically to document creators using a Celery Beat background scheduler and Redis queue.",
         "Integrated AWS S3 for secure document asset storage and Brevo API for transactional email deliveries.",
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/jitendra-pysquad/",
     },
     {
       id: "startlyze",
@@ -153,7 +151,7 @@ export default function ProjectsSection() {
         "Developed blazing-fast asynchronous FastAPI REST endpoints exposing clean pricing trends, min/max price variance, and competitive intelligence metrics for downstream analytics.",
         "Implemented resilient retry mechanisms, error handling, and proxy/header cycling to ensure consistent scraper uptime.",
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/jitendra-pysquad/",
     },
   ];
 
@@ -175,6 +173,30 @@ export default function ProjectsSection() {
             architectures I&apos;ve designed and engineered.
           </p>
         </div>
+
+        <style>{`
+          .project-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            width: min(42rem, calc(100vw - 2rem));
+            max-height: min(90vh, 44rem);
+            height: fit-content;
+            border: 1px solid #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            background: #fff;
+            color: #0f172a;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+          }
+          .project-popup::backdrop {
+            background: rgba(15, 23, 42, 0.62);
+          }
+        `}</style>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
@@ -241,10 +263,11 @@ export default function ProjectsSection() {
                     ))}
                   </div>
 
-                  {/* Actions buttons */}
+                  {/* Actions */}
                   <div className="pt-4 border-t border-sky-100 flex flex-wrap items-center gap-3">
                     <button
-                      onClick={() => setSelectedProject(proj)}
+                      type="button"
+                      popoverTarget={`metrics-${proj.id}`}
                       className="flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-cyan-600 hover:from-sky-600 hover:to-cyan-700 shadow-md shadow-sky-500/20 flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer"
                     >
                       <span>Architecture &amp; Metrics</span>
@@ -271,7 +294,7 @@ export default function ProjectsSection() {
                         href={proj.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="py-2.5 px-4 rounded-xl text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-500 hover:text-white border border-emerald-200 shadow-2xs flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer"
+                        className="py-2.5 px-4 rounded-xl text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -292,179 +315,82 @@ export default function ProjectsSection() {
                         <span>Live</span>
                       </a>
                     )}
-
-                    <a
-                      href={proj.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-700 bg-white hover:bg-sky-50 hover:text-sky-600 border border-sky-200 shadow-2xs flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer"
-                    >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 496 512"
-                        className="w-4 h-4 text-sky-600"
-                        height="1em"
-                        width="1em"
-                      >
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                      </svg>
-                      <span>Code</span>
-                    </a>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Architecture & Highlights Modal */}
-      {selectedProject && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl border border-sky-100"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-start justify-between gap-4 mb-4 border-b border-sky-100 pb-4">
-              <div>
-                <span className="text-xs uppercase tracking-wider font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
-                  {selectedProject.category}
-                </span>
-                <h3 className="text-2xl font-bold text-slate-900 mt-2">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-slate-500 text-sm">{selectedProject.subtitle}</p>
-              </div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
-                aria-label="Close modal"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Description */}
-            <p className="text-slate-700 text-sm leading-relaxed mb-6">
-              {selectedProject.description}
-            </p>
-
-            {/* Metrics */}
-            <div className="mb-6">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 mb-3 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                Key Performance Metrics &amp; Impact
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {selectedProject.metrics.map((metric, i) => (
-                  <div
-                    key={i}
-                    className="p-3 bg-sky-50/70 border border-sky-100 rounded-xl text-xs font-medium text-slate-800 flex items-center gap-2"
+              <div id={`metrics-${proj.id}`} popover="auto" className="project-popup">
+                <div className="flex items-start justify-between gap-4 mb-4 border-b border-sky-100 pb-4">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-full border border-sky-200">
+                      {proj.category}
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-900 mt-2">{proj.title}</h3>
+                    <p className="text-slate-500 text-sm">{proj.subtitle}</p>
+                  </div>
+                  <button
+                    type="button"
+                    popoverTarget={`metrics-${proj.id}`}
+                    popoverTargetAction="hide"
+                    className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
+                    aria-label="Close"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-sky-600 flex-shrink-0"
                     >
-                      <polyline points="20 6 9 17 4 12" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    <span>{metric}</span>
+                  </button>
+                </div>
+
+                <p className="text-slate-700 text-sm leading-relaxed mb-6">{proj.description}</p>
+
+                <div className="mb-6">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 mb-3">
+                    Key Performance Metrics &amp; Impact
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {proj.metrics.map((metric) => (
+                      <div
+                        key={metric}
+                        className="p-3 bg-sky-50/70 border border-sky-100 rounded-xl text-xs font-medium text-slate-800"
+                      >
+                        {metric}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 mb-3">
+                    System Architecture &amp; Implementation Details
+                  </h4>
+                  <ul className="space-y-2.5">
+                    {proj.highlights.map((highlight) => (
+                      <li
+                        key={highlight}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed"
+                      >
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 flex-shrink-0" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-
-            {/* Architecture Highlights */}
-            <div className="mb-6">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 mb-3">
-                System Architecture &amp; Implementation Details
-              </h4>
-              <ul className="space-y-2.5">
-                {selectedProject.highlights.map((highlight, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed"
-                  >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="mb-6">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 mb-2">
-                Tech Stack
-              </h4>
-              <div className="flex flex-wrap gap-1.5">
-                {selectedProject.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-2.5 py-1 rounded-full border border-sky-200 bg-sky-50 text-sky-800 font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="pt-4 border-t border-sky-100 flex justify-end gap-3">
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
-              >
-                Close
-              </button>
-              {selectedProject.liveUrl && (
-                <a
-                  href={selectedProject.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-500 hover:text-white border border-emerald-200 transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <span>View live</span>
-                </a>
-              )}
-              <a
-                href={selectedProject.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-cyan-600 hover:from-sky-600 hover:to-cyan-700 transition-all flex items-center gap-2 cursor-pointer"
-              >
-                <span>View on GitHub</span>
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
     </section>
   );
 }

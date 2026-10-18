@@ -131,7 +131,7 @@ export default function HeroSection() {
             aria-label="Social profiles"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/jitendra-pysquad/"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub profile"

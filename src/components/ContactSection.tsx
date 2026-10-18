@@ -114,7 +114,7 @@ export default function ContactSection() {
           {/* Social Profiles Row */}
           <div className="flex justify-center items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/jitendra-pysquad/"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
