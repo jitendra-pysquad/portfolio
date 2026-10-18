@@ -26,7 +26,7 @@ export default function ProjectsSection() {
       title: "NIVA – Agentic AI Chatbot Platform",
       subtitle: "Omnichannel AI Assistant with RAG & Enterprise CRM Connectors",
       category: "AI / LLM",
-      image: asset("/projects/niva.jpg"),
+      image: asset("/projects/niva.png"),
       description:
         "An enterprise-scale agentic AI chatbot platform engineered with Python, Django REST Framework, LangGraph, Azure OpenAI, and ChromaDB. Features automated RAG-based knowledge retrieval, secure multi-tenant RBAC, Razorpay subscription billing, and real-time omnichannel orchestration.",
       techStack: [
@@ -61,7 +61,7 @@ export default function ProjectsSection() {
       title: "CareNav – Hospital Insurance Claims Platform",
       subtitle: "Multi-Tenant Healthcare Pre-Auth & Claims Engine with NHCX / ABDM",
       category: "Enterprise Backend",
-      image: asset("/projects/carenav.jpg"),
+      image: asset("/projects/carenav.png"),
       description:
         "A compliant, multi-tenant hospital insurance claims engine where medical institutions manage patient records, invoice generation, pre-authorization, and final claims while insurance adjudicators review and decide settlements.",
       techStack: [

@@ -19,8 +19,8 @@ export default function PortfolioTab() {
   ];
 
   const projectImages: Record<string, string> = {
-    niva: asset("/projects/niva.jpg"),
-    carenav: asset("/projects/carenav.jpg"),
+    niva: asset("/projects/niva.png"),
+    carenav: asset("/projects/carenav.png"),
     sharelyze: asset("/projects/sharelyze.jpg"),
     startlyze: asset("/projects/startlyze.jpg"),
   };
@@ -68,7 +68,7 @@ export default function PortfolioTab() {
       <div className="projects-grid">
         {filteredProjects.map((project: Project, index: number) => {
           const isExpanded = expandedId === project.id;
-          const imgSrc = projectImages[project.id] || asset("/projects/niva.jpg");
+          const imgSrc = projectImages[project.id] || asset("/projects/niva.png");
 
           return (
             <div
