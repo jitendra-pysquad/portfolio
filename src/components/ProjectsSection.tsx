@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { asset } from "@/lib/basePath";
 
 interface ProjectItem {
   id: string;
@@ -24,7 +25,7 @@ export default function ProjectsSection() {
       title: "NIVA – Agentic AI Chatbot Platform",
       subtitle: "Omnichannel AI Assistant with RAG & Enterprise CRM Connectors",
       category: "AI / LLM",
-      image: "/projects/niva.jpg",
+      image: asset("/projects/niva.jpg"),
       description:
         "An enterprise-scale agentic AI chatbot platform engineered with Python, Django REST Framework, LangGraph, Azure OpenAI, and ChromaDB. Features automated RAG-based knowledge retrieval, secure multi-tenant RBAC, Razorpay subscription billing, and real-time omnichannel orchestration.",
       techStack: [
@@ -58,7 +59,7 @@ export default function ProjectsSection() {
       title: "CareNav – Hospital Insurance Claims Platform",
       subtitle: "Multi-Tenant Healthcare Pre-Auth & Claims Engine with NHCX / ABDM",
       category: "Enterprise Backend",
-      image: "/projects/carenav.jpg",
+      image: asset("/projects/carenav.jpg"),
       description:
         "A compliant, multi-tenant hospital insurance claims engine where medical institutions manage patient records, invoice generation, pre-authorization, and final claims while insurance adjudicators review and decide settlements.",
       techStack: [
@@ -93,7 +94,7 @@ export default function ProjectsSection() {
       title: "ShareLyze – Document Sharing & Analytics",
       subtitle: "Secure Content Distribution Platform with Engagement Telemetry",
       category: "SaaS & Payments",
-      image: "/projects/sharelyze.jpg",
+      image: asset("/projects/sharelyze.jpg"),
       description:
         "A high-security document sharing SaaS platform featuring passwordless email-OTP authentication, granular tiered permissions, Razorpay subscription checkouts, and deep link-engagement telemetry.",
       techStack: [
@@ -127,7 +128,7 @@ export default function ProjectsSection() {
       title: "Startlyze – E-Commerce Price Monitoring",
       subtitle: "Headless Web Scraping Engine & Real-Time Price Analytics API",
       category: "Web Scraping & APIs",
-      image: "/projects/startlyze.jpg",
+      image: asset("/projects/startlyze.jpg"),
       description:
         "An automated e-commerce market intelligence tool utilizing headless Python Selenium scraping to track, record, and alert on fluctuating retail product prices across South African e-commerce portals.",
       techStack: [

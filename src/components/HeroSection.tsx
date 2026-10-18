@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { asset } from "@/lib/basePath";
 
 const TYPING_TITLES = [
   "Python Backend Developer",
@@ -105,7 +106,7 @@ export default function HeroSection() {
               View Projects
             </a>
             <a
-              href="/Resume_Jitendra_Chaudhary.pdf"
+              href={asset("/Resume_Jitendra_Chaudhary.pdf")}
               target="_blank"
               rel="noreferrer"
               className="px-8 py-3.5 bg-white border border-sky-200 hover:border-sky-500 hover:text-sky-700 text-slate-700 rounded-xl font-semibold transition-all flex items-center gap-2 group hover:bg-sky-50 shadow-sm active:scale-95 cursor-pointer"
@@ -206,7 +207,7 @@ export default function HeroSection() {
               <img
                 alt="Jitendra Chaudhary"
                 className="w-full h-full object-cover object-[center_15%]"
-                src="/avatar.jpg"
+                src={asset("/avatar.jpg")}
               />
             </div>
           </div>

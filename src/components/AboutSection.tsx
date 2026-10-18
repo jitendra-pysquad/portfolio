@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { asset } from "@/lib/basePath";
 
 export default function AboutSection() {
   return (
@@ -43,7 +44,7 @@ export default function AboutSection() {
 
             <div className="mb-10">
               <a
-                href="/Resume_Jitendra_Chaudhary.pdf"
+                href={asset("/Resume_Jitendra_Chaudhary.pdf")}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-sky-50 border border-sky-200 hover:bg-sky-500 hover:text-white text-sky-700 rounded-xl transition-all duration-300 font-semibold text-lg group active:scale-95 shadow-md shadow-sky-100/60 cursor-pointer"

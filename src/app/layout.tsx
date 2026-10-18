@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { asset } from "@/lib/basePath";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,11 +25,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Jitendra Chaudhary" }],
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/avatar.jpg", type: "image/jpeg" },
+      { url: asset("/icon.png"), type: "image/png" },
+      { url: asset("/avatar.jpg"), type: "image/jpeg" },
     ],
-    shortcut: "/icon.png",
-    apple: "/avatar.jpg",
+    shortcut: asset("/icon.png"),
+    apple: asset("/avatar.jpg"),
   },
   openGraph: {
     title: "Portfolio | Jitendra Chaudhary",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Jitendra Chaudhary Portfolio",
     images: [
       {
-        url: "/avatar.jpg",
+        url: asset("/avatar.jpg"),
         width: 1024,
         height: 1024,
         alt: "Jitendra Chaudhary - Python Backend Developer",
@@ -58,9 +59,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/avatar.jpg" />
+        <link rel="icon" href={asset("/icon.png")} type="image/png" />
+        <link rel="shortcut icon" href={asset("/favicon.ico")} />
+        <link rel="apple-touch-icon" href={asset("/avatar.jpg")} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 import { RESUME_DATA } from "@/data/resumeData";
 
 interface SidebarProps {
@@ -34,7 +35,7 @@ export default function Sidebar({ theme, onToggleTheme }: SidebarProps) {
       <div className="profile-img-container">
         <div className="profile-img-inner">
           <Image
-            src="/avatar.jpg"
+            src={asset("/avatar.jpg")}
             alt={RESUME_DATA.personal.name}
             width={135}
             height={135}
@@ -105,7 +106,7 @@ export default function Sidebar({ theme, onToggleTheme }: SidebarProps) {
 
       {/* Direct Resume PDF Download Button */}
       <a
-        href="/Resume_Jitendra_Chaudhary.pdf"
+        href={asset("/Resume_Jitendra_Chaudhary.pdf")}
         download="Resume_Jitendra_Chaudhary.pdf"
         className="btn-download"
         id="sidebar-cv-btn"

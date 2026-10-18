@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 import { RESUME_DATA, Project } from "@/data/resumeData";
 
 export default function PortfolioTab() {
@@ -18,10 +19,10 @@ export default function PortfolioTab() {
   ];
 
   const projectImages: Record<string, string> = {
-    niva: "/projects/niva.jpg",
-    carenav: "/projects/carenav.jpg",
-    sharelyze: "/projects/sharelyze.jpg",
-    startlyze: "/projects/startlyze.jpg",
+    niva: asset("/projects/niva.jpg"),
+    carenav: asset("/projects/carenav.jpg"),
+    sharelyze: asset("/projects/sharelyze.jpg"),
+    startlyze: asset("/projects/startlyze.jpg"),
   };
 
   const filteredProjects =
@@ -67,7 +68,7 @@ export default function PortfolioTab() {
       <div className="projects-grid">
         {filteredProjects.map((project: Project, index: number) => {
           const isExpanded = expandedId === project.id;
-          const imgSrc = projectImages[project.id] || "/projects/niva.jpg";
+          const imgSrc = projectImages[project.id] || asset("/projects/niva.jpg");
 
           return (
             <div
