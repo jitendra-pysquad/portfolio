@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { asset } from "@/lib/basePath";
 
 const TYPING_TITLES = [
@@ -12,33 +12,6 @@ const TYPING_TITLES = [
 ];
 
 export default function HeroSection() {
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const fullText = TYPING_TITLES[currentTitleIndex];
-    let typingSpeed = isDeleting ? 40 : 90;
-
-    if (!isDeleting && displayText === fullText) {
-      const timeout = setTimeout(() => setIsDeleting(true), 2000);
-      return () => clearTimeout(timeout);
-    } else if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setCurrentTitleIndex((prev) => (prev + 1) % TYPING_TITLES.length);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setDisplayText(
-        isDeleting
-          ? fullText.substring(0, displayText.length - 1)
-          : fullText.substring(0, displayText.length + 1)
-      );
-    }, typingSpeed);
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentTitleIndex]);
 
   return (
     <section
@@ -84,11 +57,32 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          {/* Dynamic Typing Title */}
-          <p className="text-xl sm:text-2xl text-sky-600 font-semibold mb-4 min-h-[36px] flex items-center gap-1 animate-fade-in-up animation-delay-200">
-            <span>{displayText}</span>
-            <span className="inline-block w-0.5 h-6 bg-sky-500 animate-pulse ml-0.5" />
+          {/* Types a role, deletes it, then types the next one */}
+          <p
+            className="relative mb-6 text-xl font-semibold text-sky-600 sm:text-2xl"
+            style={{ height: "2.75rem" }}
+          >
+            {TYPING_TITLES.map((title, index) => (
+              <span
+                key={title}
+                className="absolute left-0 top-0 overflow-hidden whitespace-nowrap border-r-2 border-sky-500 pr-0.5"
+                style={{
+                  animation: "type-delete 20s steps(300, end) infinite both",
+                  animationDelay: `${index * 4}s`,
+                }}
+              >
+                {title}
+              </span>
+            ))}
           </p>
+          <style>{`
+            @keyframes type-delete {
+              0% { max-width: 0; }
+              8% { max-width: 32ch; }
+              12% { max-width: 32ch; }
+              18%, 100% { max-width: 0; }
+            }
+          `}</style>
 
           {/* Description Paragraph */}
           <p className="text-base sm:text-lg text-slate-600 mb-8 max-w-xl leading-relaxed font-normal animate-fade-in-up animation-delay-300">

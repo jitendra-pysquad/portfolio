@@ -97,7 +97,7 @@ export default function ProjectsSection() {
       title: "ShareLyze – Document Sharing & Analytics",
       subtitle: "Secure Content Distribution Platform with Engagement Telemetry",
       category: "SaaS & Payments",
-      image: asset("/projects/sharelyze.jpg"),
+      image: asset("/projects/sharelyze.png"),
       description:
         "A high-security document sharing SaaS platform featuring passwordless email-OTP authentication, granular tiered permissions, Razorpay subscription checkouts, and deep link-engagement telemetry.",
       techStack: [
@@ -184,12 +184,12 @@ export default function ProjectsSection() {
               className="bg-white rounded-2xl overflow-hidden border border-sky-100 shadow-md hover:border-sky-400 hover:shadow-xl hover:shadow-sky-100/80 group transition-all duration-300 flex flex-col h-full hover:-translate-y-1"
             >
               {/* Project Image Banner */}
-              <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-sky-50 border-b border-sky-100 flex-shrink-0">
+              <div className="relative w-full bg-slate-100 border-b border-sky-100 flex-shrink-0">
                 <img
                   src={proj.image}
                   alt={proj.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto block"
                 />
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-10">

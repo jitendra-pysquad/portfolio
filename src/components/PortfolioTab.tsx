@@ -21,7 +21,7 @@ export default function PortfolioTab() {
   const projectImages: Record<string, string> = {
     niva: asset("/projects/niva.png"),
     carenav: asset("/projects/carenav.png"),
-    sharelyze: asset("/projects/sharelyze.jpg"),
+    sharelyze: asset("/projects/sharelyze.png"),
     startlyze: asset("/projects/startlyze.jpg"),
   };
 
@@ -90,8 +90,8 @@ export default function PortfolioTab() {
                   height={340}
                   style={{
                     width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
+                    height: "auto",
+                    objectFit: "contain",
                     display: "block",
                   }}
                   priority={index < 2}
