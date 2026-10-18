@@ -35,7 +35,7 @@ export default function Sidebar({ theme, onToggleTheme }: SidebarProps) {
       <div className="profile-img-container">
         <div className="profile-img-inner">
           <Image
-            src={asset("/avatar.jpg")}
+            src={asset("/profile.png")}
             alt={RESUME_DATA.personal.name}
             width={135}
             height={135}

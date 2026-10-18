@@ -207,7 +207,7 @@ export default function HeroSection() {
               <img
                 alt="Jitendra Chaudhary"
                 className="w-full h-full object-cover object-[center_15%]"
-                src={asset("/avatar.jpg")}
+                src={asset("/profile.png")}
               />
             </div>
           </div>

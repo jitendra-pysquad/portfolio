@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: asset("/icon.png"), type: "image/png" },
-      { url: asset("/avatar.jpg"), type: "image/jpeg" },
+      { url: asset("/profile.png"), type: "image/png" },
     ],
     shortcut: asset("/icon.png"),
-    apple: asset("/avatar.jpg"),
+    apple: asset("/profile.png"),
   },
   openGraph: {
     title: "Portfolio | Jitendra Chaudhary",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     siteName: "Jitendra Chaudhary Portfolio",
     images: [
       {
-        url: asset("/avatar.jpg"),
-        width: 1024,
-        height: 1024,
+        url: asset("/profile.png"),
+        width: 1145,
+        height: 1145,
         alt: "Jitendra Chaudhary - Python Backend Developer",
       },
     ],
@@ -61,7 +61,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={asset("/icon.png")} type="image/png" />
         <link rel="shortcut icon" href={asset("/favicon.ico")} />
-        <link rel="apple-touch-icon" href={asset("/avatar.jpg")} />
+        <link rel="apple-touch-icon" href={asset("/profile.png")} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

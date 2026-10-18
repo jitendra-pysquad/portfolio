@@ -14,6 +14,7 @@ interface ProjectItem {
   highlights: string[];
   image: string;
   githubUrl: string;
+  liveUrl?: string;
 }
 
 export default function ProjectsSection() {
@@ -53,6 +54,7 @@ export default function ProjectsSection() {
         "Constructed an omnichannel integration layer connecting WhatsApp, Instagram, Slack, Telegram, Discord, Microsoft Teams, and LINE, combined with bidirectional CRM sync into HubSpot, Salesforce, Odoo, and Zendesk.",
       ],
       githubUrl: "https://github.com",
+      liveUrl: "https://getniva.ai/",
     },
     {
       id: "carenav",
@@ -88,6 +90,7 @@ export default function ProjectsSection() {
         "Enforced robust testing with pytest and Django TestCase alongside comprehensive Swagger / OpenAPI live documentation.",
       ],
       githubUrl: "https://github.com",
+      liveUrl: "https://hospital.carenavindia.ai/login?reson=inactive",
     },
     {
       id: "sharelyze",
@@ -239,7 +242,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Actions buttons */}
-                  <div className="pt-4 border-t border-sky-100 flex items-center gap-3">
+                  <div className="pt-4 border-t border-sky-100 flex flex-wrap items-center gap-3">
                     <button
                       onClick={() => setSelectedProject(proj)}
                       className="flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-cyan-600 hover:from-sky-600 hover:to-cyan-700 shadow-md shadow-sky-500/20 flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer"
@@ -262,6 +265,33 @@ export default function ProjectsSection() {
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                       </svg>
                     </button>
+
+                    {proj.liveUrl && (
+                      <a
+                        href={proj.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="py-2.5 px-4 rounded-xl text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-500 hover:text-white border border-emerald-200 shadow-2xs flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3.5 h-3.5"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M2 12h20" />
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        <span>Live</span>
+                      </a>
+                    )}
 
                     <a
                       href={proj.githubUrl}
@@ -413,6 +443,16 @@ export default function ProjectsSection() {
               >
                 Close
               </button>
+              {selectedProject.liveUrl && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-500 hover:text-white border border-emerald-200 transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <span>View live</span>
+                </a>
+              )}
               <a
                 href={selectedProject.githubUrl}
                 target="_blank"

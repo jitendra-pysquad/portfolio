@@ -222,6 +222,7 @@ export const RESUME_DATA = {
         "Implemented automated subscription management, payment signature verification, and idempotency-guaranteed webhook processors using Redis and Celery.",
         "Constructed an omnichannel integration layer connecting WhatsApp, Instagram, Slack, Telegram, Discord, Microsoft Teams, and LINE, combined with bidirectional CRM sync into HubSpot, Salesforce/SAP, Odoo, Zendesk, and Freshdesk.",
       ],
+      liveUrl: "https://getniva.ai/",
       featured: true,
     },
     {
@@ -256,6 +257,7 @@ export const RESUME_DATA = {
         "Automated background processing with Celery and Redis for automated claim submissions, insurer email synchronization, and periodic payment settlement reconciliation.",
         "Enforced robust testing with pytest and Django TestCase alongside comprehensive Swagger / OpenAPI live documentation.",
       ],
+      liveUrl: "https://hospital.carenavindia.ai/login?reson=inactive",
       featured: true,
     },
     {
