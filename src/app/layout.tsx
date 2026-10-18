@@ -24,11 +24,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Jitendra Chaudhary" }],
   icons: {
-    icon: [
-      { url: asset("/icon.png"), type: "image/png" },
-      { url: asset("/profile.png"), type: "image/png" },
-    ],
-    shortcut: asset("/icon.png"),
+    icon: [{ url: asset("/icon.png"), type: "image/png", sizes: "192x192" }],
+    shortcut: asset("/favicon.ico"),
     apple: asset("/profile.png"),
   },
   openGraph: {
@@ -59,7 +56,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href={asset("/icon.png")} type="image/png" />
+        <link rel="icon" href={asset("/icon.png")} type="image/png" sizes="192x192" />
         <link rel="shortcut icon" href={asset("/favicon.ico")} />
         <link rel="apple-touch-icon" href={asset("/profile.png")} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
